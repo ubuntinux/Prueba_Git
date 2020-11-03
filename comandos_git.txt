@@ -31,3 +31,56 @@ Este comando deshace un archivo preparado o rastreado, es decir lo saca del
 "staged area".
 
 
+$ git commit
+
+Este comando sirve para confirmar los cambios que ya tienes rastreados en la 
+stage area. Aparecerá tu editor de textos preestablecido para que insertes un 
+mensaje o texto para el commit, por ejemplo: "Mi primer commit o actualización"
+
+
+$ git commit -m "texto o mensaje del commit"
+
+Exactamente igual que el anterior pero esta vez ya escribes el mensaje en 
+lugar de utilizar el editor de texto predefinido.
+
+
+$ git commit -a -m "texto informativo"
+
+Exactamente igual que el anterior pero esta vez nos saltamos el paso de 
+preparar o rastrear los archivos en el stage area y añadir directamente los 
+archivos del espacio de trabajo a ser comentados o confirmados (commiteados).
+Nos estamos saltando el comando "git add".
+
+
+$ git diff
+
+Este comando compara lo que tienes en tu directorio de trabajo con lo que está 
+en el stage area o área de preparación.
+
+
+$ git diff --staged
+
+Este comando compara tus cambios en el stage area con la última instantánea 
+confirmada o commiteada.
+
+
+$ git config --global user.name "Belinux"
+
+Este comando añade tu nombre de usuario, ya que debes identificarte cuando 
+instales git.
+
+
+$ git config --global user.email "nombre@ejemplo.com"
+
+Este comando añade tu correo electrónico. Es importante para empezar a hacer 
+commits, ya que git usa tu nombre y correo electrónico para identificar los 
+cambios confirmados o commiteados.
+
+
+$ git config --global core.editor nano
+
+Este comando preestablece tu editor de texto favorito. Es necesario cuando 
+realizamos un: "git commit" a secas, ya que nos abrirá el editor de texto 
+que hemos predefinido para editar un mensaje.
+
+
