@@ -15,6 +15,11 @@ que estado. Si no están seguidos (rastreados), o si ya están seguidos y por
 lo tanto, en el "staged area".
 
 
+$ git status -s
+
+Lo mismo que lo anterior pero en formato abreviado.
+
+
 $ git add <archivo>
 
 Este comando sirve para empezar a rastrear el archivo. Es decir, envía o añade 
@@ -29,6 +34,35 @@ $ git reset HEAD <archivo>
 
 Este comando deshace un archivo preparado o rastreado, es decir lo saca del 
 "staged area".
+
+
+$ git rm <archivo>
+
+Prepara la eliminación de un archivo para el próximo commit. 
+Una vez hayas eliminado el archivo de tu directorio con "rm".
+
+
+$ git rm --cached <archivo>
+
+Eliminar el archivo del area staged, pero sin eliminarlo de tu directorio de 
+trabajo. Es posible que hayas olvidado de añadirlo en el archivo .gitignore.
+
+
+$ git rm log/\*.log
+
+Este comando elimina del stage area todos los archivos terminados en la 
+extensión .log del directorio "log/". atención al caracter \ necesario en git.
+
+
+$ git rm \*~
+
+Elimina del stage area todos los archivos terminados en ~. 
+Tener siempre cuidado de añadir el símbolo \
+
+
+$ git mv <archivo_inicial> <archivo_final>
+
+Cambia el nombre de un archivo en el stage area.
 
 
 $ git commit
@@ -64,6 +98,16 @@ Este comando compara tus cambios en el stage area con la última instantánea
 confirmada o commiteada.
 
 
+$ git diff --cached
+
+Es sinónimo de "--staged".
+
+
+$ git config --list
+
+Este comando lista todas las propiedades de tu configuración de git
+
+
 $ git config --global user.name "Belinux"
 
 Este comando añade tu nombre de usuario, ya que debes identificarte cuando 
@@ -83,4 +127,58 @@ Este comando preestablece tu editor de texto favorito. Es necesario cuando
 realizamos un: "git commit" a secas, ya que nos abrirá el editor de texto 
 que hemos predefinido para editar un mensaje.
 
+
+$ git log
+
+Muestra todos los commits o confirmaciones cronológicamente inversa.
+
+
+$ git log -p
+
+Muestra todos los commits o confirmaciones cronológicamente inversa.
+Y muestra las diferencias introducidas en los archivos.
+
+
+$ git log -p -2
+
+Muestra todos los commits o confirmaciones cronológicamente inversa.
+Muestra las últimas 2 entradas con sus diferencias.
+
+
+$ git log --stat
+
+Muestra todos los commits o confirmaciones cronológicamente inversa.
+Con los archivos y sus diferencias. Con una serie de estadísticas.
+
+
+$ git branch
+
+Este comando muestra cuantas ramas tienes activas.
+
+
+$ git branch <nombre_rama>
+
+Este comando crea una nueva rama y le da un nombre.
+
+
+$ git checkout <nombre_rama>
+
+Este comando cambia a la nueva rama.
+
+
+$ git clone <URL>
+
+Este comando clona un repositorio externo en tu PC, creando un subdirectorio 
+del mismo nombre que el repositorio con todos los archivos incluidos 
+recursivamente. Además inicia el repositorio en local, no es necesario 
+iniciarlo con "git init".
+
+
+$ git push
+
+Sube al repositorio remoto tu commit, te pide nombre de usuario y contraseña 
+del repositorio remoto.
+
+
+$ git pull
 
