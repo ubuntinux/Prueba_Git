@@ -1,0 +1,33 @@
+COMANDOS GIT:
+
+$ git init
+
+Para iniciar un nuevo proyecto en el directorio actual.
+Esto crea el directorio oculto .git/ que contiene todos los archivos 
+necesarios para el repositorio. Un esqueleto del repositorio git.
+Todavía no hay nada en tu proyecto que esté bajo seguimiento.
+
+
+$ git status
+
+Es un comando principal que sirve para determinar que archivos están y en 
+que estado. Si no están seguidos (rastreados), o si ya están seguidos y por 
+lo tanto, en el "staged area".
+
+
+$ git add <archivo>
+
+Este comando sirve para empezar a rastrear el archivo. Es decir, envía o añade 
+el archivo al "staged area". Puede rastrear archivos o directorios, los cuales 
+rastreará recursivamente todos los archivos incluidos en él. 
+Para cada modificación en un archivo debes ejecutar este comando.
+Al ejecutar este comando sobre un archivo, dicho archivo aparecerá como archivo 
+preparado. Este comando prepara los archivos para la próxima confirmación.
+
+
+$ git reset HEAD <archivo>
+
+Este comando deshace un archivo preparado o rastreado, es decir lo saca del 
+"staged area".
+
+
