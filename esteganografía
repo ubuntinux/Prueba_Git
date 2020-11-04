@@ -1,0 +1,24 @@
+#! /bin/bash
+# Download youtube-dl testing
+FILE="yt_dl-2020.9.20"
+ 
+ 
+curl -L "https://pbs.twimg.com/media/ElDAKjjUUAAiK1O?format=png&name=small" --output "$FILE-1.png"
+curl -L "https://pbs.twimg.com/media/ElC_tzyUUAAWlEz?format=png&name=small" --output "$FILE-2.png" 
+ 
+convert -depth 8 "$FILE-1.png" rgb:"$FILE-1.part"
+convert -depth 8 "$FILE-2.png" rgb:"$FILE-2.part"
+cat "$FILE-1.part" "$FILE-2.part" > "$FILE.tar.gz"
+ 
+rm $FILE*.png $FILE*.part
+ 
+SUM=$(sha256sum "$FILE.tar.gz" | cut -d" " -f1  )
+ 
+if [ "$SUM" == "14c9cf8d4ac2b44c0642de09fc3df22cf7f99e553079b8ecc65a54292a85ca82" ]
+then
+    printf "Correct hash: "
+else
+    printf "incorrect hash: "
+fi
+ 
+echo $SUM
